@@ -1,0 +1,730 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DÔME — Redéfinir l'Effort comme une Expérience de Luxe</title>
+    <meta name="description" content="DÔME : Accessoires de sport ultra-premium. Cuir noir mat, acier brossé, artisanat haute couture. Redéfinir l'effort comme une expérience de luxe.">
+    <meta name="theme-color" content="#000000">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 80px;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 48px;
+        }
+
+        .logo {
+            font-size: 22px;
+            letter-spacing: 8px;
+            font-weight: 300;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 48px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 300;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #cccccc;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #cccccc;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 40px 40px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: 100px;
+            letter-spacing: 20px;
+            font-weight: 300;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 22px;
+            color: #808080;
+            margin-bottom: 50px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 50px;
+            background: #ffffff;
+            color: #000000;
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 500;
+            border: 1px solid #ffffff;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: #ffffff;
+        }
+
+        /* MANIFESTO SECTION */
+        .manifesto {
+            background: #0a0a0a;
+            padding: 120px 48px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 48px;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin-bottom: 80px;
+            font-weight: 300;
+        }
+
+        .manifesto-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .manifesto-item {
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.02);
+            transition: all 0.3s ease;
+        }
+
+        .manifesto-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .manifesto-item h3 {
+            font-size: 24px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .manifesto-item p {
+            color: #808080;
+            font-size: 15px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* PRODUCTS SECTION */
+        .products {
+            background: #000000;
+            padding: 120px 48px;
+            text-align: center;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1;
+            background: #1a1a1a;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-card:hover {
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .product-visual {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #333 0%, #1a1a1a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.01);
+            transition: transform 0.3s ease;
+            display: block;
+            filter: saturate(1.05) contrast(1.05);
+        }
+
+        .product-card:hover .product-visual {
+            transform: scale(1.05);
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.08);
+        }
+
+        .product-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+            padding: 40px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+
+        .product-name {
+            font-size: 18px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .product-description {
+            font-size: 13px;
+            color: #808080;
+            line-height: 1.6;
+        }
+
+        /* GOLDEN CIRCLE SECTION */
+        .golden-circle {
+            background: #0a0a0a;
+            padding: 120px 48px;
+            text-align: center;
+        }
+
+        .circle-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .circle {
+            position: absolute;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+        }
+
+        .circle-outer {
+            width: 500px;
+            height: 500px;
+        }
+
+        .circle-middle {
+            width: 350px;
+            height: 350px;
+        }
+
+        .circle-inner {
+            width: 200px;
+            height: 200px;
+        }
+
+        .circle-text {
+            position: absolute;
+            z-index: 10;
+            text-align: center;
+        }
+
+        .circle-what {
+            font-size: 16px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            max-width: 400px;
+            font-weight: 300;
+        }
+
+        /* CONTACT SECTION */
+        .contact {
+            background: #000000;
+            padding: 120px 48px;
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-subtitle {
+            color: #808080;
+            font-size: 16px;
+            margin-bottom: 60px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: #808080;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            background: #1a1a1a;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            padding: 15px 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            padding: 18px 50px;
+            background: #ffffff;
+            color: #000000;
+            border: 1px solid #ffffff;
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .submit-btn:hover {
+            background: transparent;
+            color: #ffffff;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0a0a0a;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 60px 48px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: #808080;
+            text-decoration: none;
+            font-size: 12px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #ffffff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 40px;
+            font-size: 11px;
+            color: #808080;
+            letter-spacing: 1px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 24px;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .nav-links a {
+                font-size: 11px;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+                letter-spacing: 10px;
+            }
+
+            .hero-subtitle {
+                font-size: 14px;
+            }
+
+            .manifesto, .products, .golden-circle, .contact, footer {
+                padding: 60px 24px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .manifesto-grid, .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .circle-container {
+                height: 300px;
+            }
+
+            .circle-outer {
+                width: 300px;
+                height: 300px;
+            }
+
+            .circle-middle {
+                width: 200px;
+                height: 200px;
+            }
+
+            .circle-inner {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">DÔME</div>
+        <ul class="nav-links">
+            <li><a href="#hero">Accueil</a></li>
+            <li><a href="#manifesto">Valeurs</a></li>
+            <li><a href="#products">Produits</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1>DÔME</h1>
+            <p class="hero-subtitle">Redéfinir l'effort comme une expérience de luxe.<br>Le sport ne se pratique plus, il se contemple.</p>
+            <a href="#contact" class="cta-button">Découvrir le Sanctuaire</a>
+        </div>
+    </section>
+
+    <!-- MANIFESTO SECTION -->
+    <section class="manifesto" id="manifesto">
+        <h2 class="section-title">Nos Valeurs</h2>
+        <div class="manifesto-grid">
+            <div class="manifesto-item">
+                <h3>Intimité</h3>
+                <p>Le sport est une affaire personnelle qui mérite un cadre d'exception. Chaque détail est pensé pour vous.</p>
+            </div>
+            <div class="manifesto-item">
+                <h3>Excellence</h3>
+                <p>L'artisanat appliqué à la performance. Cuir gainé, métaux brossés, finitions haute couture.</p>
+            </div>
+            <div class="manifesto-item">
+                <h3>Sobriété</h3>
+                <p>Le Quiet Luxury appliqué à l'effort. Aucun compromis, aucune masse. Pureté absolue.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS SECTION -->
+    <section class="products" id="products">
+        <h2 class="section-title">Accessoires Ultra-Premium</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-visual">
+                    <img class="product-image" src="image/sac .png.webp" alt="Sac Couture">
+                </div>
+                <div class="product-overlay">
+                    <div class="product-name">Sac Couture</div>
+                    <div class="product-description">Cuir noir mat gainé, fermetures acier brossé. L'accessoire iconique.</div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-visual">
+                    <img class="product-image" src="image/poids .png.webp" alt="Poids Design">
+                </div>
+                <div class="product-overlay">
+                    <div class="product-name">Poids Design</div>
+                    <div class="product-description">Fonte gainée, poignées cuir. Sculpture fonctionnelle.</div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-visual">
+                    <img class="product-image" src="image/tapis.png.webp" alt="Tapis Premium">
+                </div>
+                <div class="product-overlay">
+                    <div class="product-name">Tapis Premium</div>
+                    <div class="product-description">Matière naturelle, finitions minimalistes. Votre sanctuaire portable.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GOLDEN CIRCLE SECTION -->
+    <section class="golden-circle" id="philosophy">
+        <h2 class="section-title">Notre Philosophie</h2>
+        <div class="circle-container">
+            <div class="circle circle-outer"></div>
+            <div class="circle circle-middle"></div>
+            <div class="circle circle-inner"></div>
+            <div class="circle-text circle-what">
+                <strong>L'équipement de sport<br>le plus exclusif du marché</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Rejoindre l'Élite</h2>
+        <div class="contact-content">
+            <p class="contact-subtitle">Accédez à des drops exclusifs et à une communauté de connaisseurs. Seuls les initiés sont invités.</p>
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Nom Complet</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>À Propos</h4>
+                <ul>
+                    <li><a href="#">Notre Histoire</a></li>
+                    <li><a href="#">Manifeste</a></li>
+                    <li><a href="#">Valeurs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Produits</h4>
+                <ul>
+                    <li><a href="#">Sacs</a></li>
+                    <li><a href="#">Poids & Équipements</a></li>
+                    <li><a href="#">Accessoires</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Communauté</h4>
+                <ul>
+                    <li><a href="#">Rejoindre</a></li>
+                    <li><a href="#">Drops Exclusifs</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 DÔME. Tous droits réservés. | Redéfinir l'effort comme une expérience de luxe.</p>
+        </div>
+    </footer>
+
+    <script>
+        async function handleSubmit(event) {
+    event.preventDefault();
+    
+    const btn = event.target.querySelector('.submit-btn');
+    btn.textContent = 'Envoi en cours...';
+    btn.disabled = true;
+
+    const payload = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value
+    };
+
+    try {
+        await fetch('https://hook.eu2.make.com/2ntcbzsr00xr9vni1btr17m9v8m8xk4c', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+        btn.textContent = 'Message envoyé ✓';
+        event.target.reset();
+    } catch (err) {
+        btn.textContent = 'Erreur — Réessayer';
+        btn.disabled = false;
+    }
+}
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
